@@ -1,0 +1,22 @@
+{
+  "name": "shelly_exporter",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Patrik Pancisin",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tsc && node --env-file=.env build/app.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "prom-client": "^15.1.3",
+    "restana": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  }
+}
