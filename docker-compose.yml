@@ -1,0 +1,10 @@
+services:
+  exporter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - EXPORTER_PORT=9121
+      - SHELLY_HOST=192.168.88.176
+    ports:
+      - "9121:9121"

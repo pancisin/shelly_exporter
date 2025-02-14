@@ -20,6 +20,16 @@ const fetchShellyStatus = async () => {
         .set(data["em:0"][`${phase}_${metricName}`]);
     });
   });
+
+  ["current", "act_power", "aprt_power"].forEach((metricName) => {
+    phaseMetrics[metricName]
+      .labels({ phase: "total" })
+      .set(data["em:0"][`total_${metricName}`]);
+  });
+
+  phaseMetrics.current
+    .labels({ phase: "n" })
+    .set(data["em:0"]["n_current"] || 0);
 };
 
 fetchShellyStatus();
